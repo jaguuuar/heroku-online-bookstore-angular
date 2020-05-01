@@ -9,7 +9,7 @@ import { Book } from '../common/book';
 })
 export class BookService {
 
-  private baseUrl = 'http://localhost:8080/api/v1/books';
+  private baseUrl = 'https://bookstore-rest.herokuapp.com/api/v1/books';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -8,4 +8,4 @@ app.get('/*', (req, res) =>
     res.sendFile('index.html', {root: 'dist/angular-bookstore/'}),
 );
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8088);
