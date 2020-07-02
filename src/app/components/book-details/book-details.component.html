@@ -1,0 +1,42 @@
+<div class="row">
+
+	<div class="col-lg-3">
+		<app-book-category></app-book-category>
+	</div>
+	<!-- /.col-lg-3 -->
+
+	<div class="col-lg-9">
+
+		<div class="row">
+
+			<!-- To display the image -->
+			<div class="col-12 col-md-4">
+				<div class="thumbnail">
+					<img src="{{book.imageUrl}}" width="250" height="300" />
+				</div>
+			</div>
+
+			<!-- To display the book info -->
+			<div class="col-12 col-md-8">
+				<h3>{{book.name}}</h3>
+				<hr />
+				<p>{{book.description}}</p>
+				<hr />
+				<h4>Prince: <strong>{{book.unitPrice | currency: 'EUR'}}</strong></h4>
+				<hr />
+				<h6>Qty. Available: {{book.unitsInStock}}</h6>
+
+				<a routerLink="/books" class="btn btn-success">
+					<i class="fas fa-arrow-left"> Back</i>
+				</a>
+				<a href="#" class="btn btn-primary ml-1">
+					<i class="fas fa-cart-arrow-down"> Add to Cart</i>
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- /.col-lg-9 -->
+
+</div>
