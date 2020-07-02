@@ -10,7 +10,8 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books">
 				<div class="card h-100">
-				<a routerLink="/books/{{book.id}}"><img class="card-img-top img-responsive" [src]="book.imageUrl"></a>
+					<a routerLink="/books/{{book.id}}"><img class="card-img-top img-responsive"
+							[src]="book.imageUrl"></a>
 					<div class="card-body">
 						<h4 class="card-title">
 							<a routerLink="/books/{{book.id}}">{{book.name}}</a>
@@ -28,7 +29,39 @@
 			</div>
 		</div>
 
+
+
+		<div class="row">
+			<!-- handle page size -->
+			<div class="col-md-6">
+				<!-- handle page size -->
+				<div class="row">
+					<div class="col-md-4">
+						<span class="mr-2">Page Size:</span>
+					</div>
+					<div class="col-md-8">
+						<select class="form-control-sm" (change)="updatePageSize($event.target.value)"
+							style="width: 20%;">
+							<option selected>5</option>
+							<option>10</option>
+							<option>20</option>
+							<option>50</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!-- handle pagination -->
+			<div class="col-md-6">
+				<ngb-pagination [(page)]="currentPage" [pageSize]="pageSize" [collectionSize]="totalRecords"
+					(pageChange)="listBooks()" class="d-flex justify-content-end">
+					<ng-template ngbPaginationPrevious>Prev</ng-template>
+					<ng-template ngbPaginationNext>Next</ng-template>
+					<ng-template ngbPaginationFirst>First</ng-template>
+					<ng-template ngbPaginationLast>Last</ng-template>
+				</ngb-pagination>
+			</div>
+		</div>
+
 	</div>
-	<!-- /.col-lg-9 -->
 
 </div>
